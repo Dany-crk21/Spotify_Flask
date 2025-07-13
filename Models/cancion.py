@@ -15,3 +15,17 @@ class Cancion(db.Model):
     email_contacto = db.Column(db.String(100))
     activo = db.Column(db.Boolean, default=True)
     
+    def serialize (self):
+        return{
+            'id':self.id,
+            'cancion': self.cancion,
+            'artista': self.artista,
+            'album': self.album,
+            'anio':self.anio,
+            'duracion':self.duracion,
+            'fecha_lanzamiento': self.fecha_lanzamiento,
+            'hora_estreno': self.hora_estreno,
+            'descripcion': self.descripcion,
+            'email_contacto': self.email_contacto,
+            'activo': self.activo
+        }
